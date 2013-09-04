@@ -3,6 +3,12 @@ FilterPImage
 
 Extension of Processing's PImage that adds filters and image settings like contrast, saturation etc.
 
+To use, do not init the object with Processing's loadImage. Instead, use the following constructor:
+
+    FilterPImage image = new FilterPImage(context, path);
+    
+Where context is the PApplet, and path a String to get the file.
+
 Current filters/adjustments available
 
     saturate(float factor)
