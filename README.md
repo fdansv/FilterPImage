@@ -5,12 +5,22 @@ Extension of Processing's PImage that adds filters and image settings like contr
 
 Current filters/adjustments available
 
-  saturate(float factor)
+    saturate(float factor)
+    
+Multiplies the saturation of the image by the factor.
 
-  makeItMoreYellow() 
+    makeItMoreYellow() 
+    
+Makes the image, indeed, more yellow.
 
-  smurfify()
+    smurfify()
+    
+Turns people into smurfs
 
-  contrast(double value)
-
-  sepia(int depth)
+    contrast(double value)
+    
+Changes the image's contrast
+    
+    sepia(int depth)
+    
+Applies a sepia filter to the image, with more or less depth
