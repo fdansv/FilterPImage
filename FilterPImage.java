@@ -1,0 +1,83 @@
+import processing.core.*;
+import processing.video.Capture;
+
+public class FilterPImage extends PImage {
+
+    public CokeCapture(PApplet pApplet, String camera) {
+        super(pApplet, camera);
+    }
+
+    public void saturate(float factor){
+        this.parent.colorMode(HSB);
+        this.loadPixels();
+        for(int i=0; i<this.pixels.length; i++){
+            int thisColor = parent.color(pixels[i]);
+
+            int newColor = parent.color(parent.hue(thisColor), parent.saturation(thisColor) * factor, parent.brightness(thisColor));
+            pixels[i] = newColor;
+        }
+        this.updatePixels();
+        this.parent.colorMode(RGB);
+    }
+
+    public void makeItMoreYellow() {
+        this.loadPixels();
+        for(int i=0; i<this.pixels.length; i++){
+            int thisColor = parent.color(pixels[i]);
+
+            int newColor = parent.color(parent.red(thisColor) * 1.5f, parent.green(thisColor) * 1.5f, parent.blue(thisColor));
+            pixels[i] = newColor;
+        }
+        this.updatePixels();
+    }
+    public void sinCity(){
+        this.loadPixels();
+        for(int i=0; i<this.pixels.length; i++){
+            int thisColor = parent.color(pixels[i]);
+            if(parent.red(thisColor)>100&&parent.green(thisColor)<100&&parent.blue(thisColor)<100){
+                pixels[i] = parent.color(parent.red(thisColor), parent.green(thisColor), parent.blue(thisColor));
+            }
+            else{
+                //colorMode(HSB);
+                pixels[i] = parent.color(parent.red(thisColor) * 0.6f, parent.green(thisColor) * 0.6f, parent.blue(thisColor) * 0.6f);
+                //pixels[i] = color(hue(thisColor),saturation(thisColor)*0.8f,brightness(thisColor)*0.8f);
+                //colorMode(RGB);
+            }
+        }
+        this.updatePixels();
+    }
+    public void smurfify(){
+        this.loadPixels();
+        for(int i=0; i<this.pixels.length; i++){
+            int thisColor = parent.color(pixels[i]);
+            parent.colorMode(HSB);
+            pixels[i] = parent.color(150, parent.saturation(thisColor), parent.brightness(thisColor));
+            parent.colorMode(RGB);
+        }
+
+        this.updatePixels();
+    }
+    public void dark(double value){
+        this.loadPixels();
+        double contrast = Math.pow((100 + value) / 100, 2);
+        for(int i=0; i<this.pixels.length; i++){
+            int R = (int )parent.red(pixels[i]);
+            int newr = (int)(((((R / 255.0) - 0.5) * contrast) + 0.5) * 255.0);
+            int G = (int )parent.green(pixels[i]);
+            int newg = (int)(((((G / 255.0) - 0.5) * contrast) + 0.5) * 255.0);
+            int B = (int )parent.blue(pixels[i]);
+            int newb = (int)(((((B / 255.0) - 0.5) * contrast) + 0.5) * 255.0);
+            pixels[i] = parent.color(newr, newg, newb);
+        }
+        this.updatePixels();
+    }
+    public void sepia(int depth){
+        this.loadPixels();
+        for(int i=0; i<this.pixels.length; i++){
+            int thisColor = parent.color(pixels[i]);
+            int grey = (int) ((parent.red(thisColor)+parent.green(thisColor)+parent.blue(thisColor))/3);
+            pixels[i] = parent.color(grey +depth*2 , parent.green(thisColor)+depth, parent.blue(thisColor)-depth);
+        }
+        this.updatePixels();
+    }
+}
