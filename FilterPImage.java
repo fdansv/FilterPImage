@@ -1,10 +1,27 @@
 import processing.core.*;
-import processing.video.Capture;
 
 public class FilterPImage extends PImage {
+    public FilterPImage(PApplet applet, String imgPath){
+        super();
+        PImage img = applet.loadImage(imgPath);
+        this.width = img.width;
+        this.height = img.height;
+        this.parent = applet;
+        img.loadPixels();
+        this.pixels = img.pixels;
+        this.updatePixels();
+    }
 
-    public CokeCapture(PApplet pApplet, String camera) {
-        super(pApplet, camera);
+    protected FilterPImage(int width, int height) {
+        super(width, height);
+    }
+
+    protected FilterPImage(int width, int height, int format) {
+        super(width, height, format);
+    }
+
+    protected FilterPImage() {
+        super();
     }
 
     public void saturate(float factor){
