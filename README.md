@@ -31,15 +31,17 @@ Makes the image, indeed, more yellow.
     smurfify()
     
 Turns people into smurfs
-
-
     
     sepia(int depth)
     
 Applies a sepia filter to the image, with more or less depth
     
-    trainspotting(int depth)
+    trainspotting()
     
 Makes everything a bit more orange
+
+    ocean()
+    
+Makes everything a bit more dark blue
 
 
