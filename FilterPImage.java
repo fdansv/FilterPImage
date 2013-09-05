@@ -105,6 +105,11 @@ public class FilterPImage extends PImage {
         this.contrast(20);
     }
 
+    public void ocean(){
+        this.tint(0,0,80);
+        this.saturate(0.5f);
+    }
+
     public void tint(int r, int g, int b){
         this.loadPixels();
         for(int i=0; i<this.pixels.length; i++){
