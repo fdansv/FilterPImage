@@ -10,6 +10,15 @@ To use, do not init the object with Processing's loadImage. Instead, use the fol
 Where context is the PApplet, and path a String to get the file.
 
 Current filters/adjustments available
+-------------------------------------
+
+    contrast(double value)
+    
+Changes the image's contrast
+
+    tint(int r, int g, int b)
+    
+Tints (kind of) the image with the specified colour
 
     saturate(float factor)
     
@@ -23,10 +32,14 @@ Makes the image, indeed, more yellow.
     
 Turns people into smurfs
 
-    contrast(double value)
-    
-Changes the image's contrast
+
     
     sepia(int depth)
     
 Applies a sepia filter to the image, with more or less depth
+    
+    trainspotting(int depth)
+    
+Makes everything a bit more orange
+
+
