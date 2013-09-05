@@ -1,4 +1,4 @@
-package com.dansd.FilterTests;
+package com.dansd.FilterPImage;
 
 import processing.core.PApplet;
 

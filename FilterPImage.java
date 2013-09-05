@@ -1,4 +1,4 @@
-package com.dansd.FilterTests;
+package com.dansd.FilterPImage;
 
 import processing.core.*;
 
@@ -104,6 +104,14 @@ public class FilterPImage extends PImage {
         this.tint(255,127,0);
         this.contrast(20);
     }
+
+    public void ocean(){
+        this.tint(0,0,80);
+        this.saturate(0.5f);
+    }
+
+    // tint() at the moment doesn't really tint it (i.e. applies a translucent layer over the image),
+    // but averages each pixel in the image with the specified colour
 
     public void tint(int r, int g, int b){
         this.loadPixels();
