@@ -1,3 +1,5 @@
+package com.dansd.FilterTests;
+
 import processing.core.*;
 
 public class FilterPImage extends PImage {
@@ -74,7 +76,7 @@ public class FilterPImage extends PImage {
 
         this.updatePixels();
     }
-    public void dark(double value){
+    public void contrast(double value){
         this.loadPixels();
         double contrast = Math.pow((100 + value) / 100, 2);
         for(int i=0; i<this.pixels.length; i++){
@@ -96,5 +98,26 @@ public class FilterPImage extends PImage {
             pixels[i] = parent.color(grey +depth*2 , parent.green(thisColor)+depth, parent.blue(thisColor)-depth);
         }
         this.updatePixels();
+    }
+
+    public void trainspotting(){
+        this.tint(255,127,0);
+        this.contrast(20);
+    }
+
+    public void tint(int r, int g, int b){
+        this.loadPixels();
+        for(int i=0; i<this.pixels.length; i++){
+            int thisColor = parent.color(pixels[i]);
+            int tintColor = parent.color(r,g,b);
+            int newColor = parent.color(
+                    (parent.red(thisColor)+parent.red(tintColor))/2,
+                    (parent.green(thisColor)+parent.green(tintColor))/2,
+                    (parent.blue(thisColor)+parent.blue(tintColor))/2
+            );
+            pixels[i] = newColor;
+        }
+        this.updatePixels();
+
     }
 }
