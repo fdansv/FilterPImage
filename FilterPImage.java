@@ -49,6 +49,9 @@ public class FilterPImage extends PImage {
         }
         this.updatePixels();
     }
+
+    // sinCity() doesn't work, right now it looks stupid.
+
     public void sinCity(){
         this.loadPixels();
         for(int i=0; i<this.pixels.length; i++){
