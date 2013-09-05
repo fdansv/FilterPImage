@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>FilterPImage by fdansv</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/fdansv/FilterPImage">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/fdansv/FilterPImage/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/fdansv/FilterPImage/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>FilterPImage</h1>
+          <p>Extension of Processing's PImage that adds filters and image settings like contrast, saturation etc.</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/fdansv">fdansv</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
+        </div>
+
+        <h1>
+<a name="filterpimage" class="anchor" href="#filterpimage"><span class="octicon octicon-link"></span></a>FilterPImage</h1>
+
+<p>Extension of Processing's PImage that adds filters and image settings like contrast, saturation etc.</p>
+
+<p>To use, do not init the object with Processing's loadImage. Instead, use the following constructor:</p>
+
+<pre><code>FilterPImage image = new FilterPImage(context, path);
+</code></pre>
+
+<p>Where context is the PApplet, and path a String to get the file.</p>
+
+<h2>
+<a name="current-filtersadjustments-available" class="anchor" href="#current-filtersadjustments-available"><span class="octicon octicon-link"></span></a>Current filters/adjustments available</h2>
+
+<p><img src="http://dansd.com/gitimages/c4.png"></p>
+
+<pre><code>contrast(double value)
+</code></pre>
+
+<p>Changes the image's contrast</p>
+
+<p><img src="http://dansd.com/gitimages/c7.png"></p>
+
+<pre><code>tint(int r, int g, int b)
+</code></pre>
+
+<p>Tints (kind of) the image with the specified colour</p>
+
+<p><img src="http://dansd.com/gitimages/c5.png"></p>
+
+<pre><code>saturate(float factor)
+</code></pre>
+
+<p>Multiplies the saturation of the image by the factor.</p>
+
+<pre><code>makeItMoreYellow() 
+</code></pre>
+
+<p>Makes the image, indeed, more yellow.</p>
+
+<p><img src="http://dansd.com/gitimages/c3.png"></p>
+
+<pre><code>smurfify()
+</code></pre>
+
+<p>Turns people into smurfs</p>
+
+<p><img src="http://dansd.com/gitimages/c6.png"></p>
+
+<pre><code>sepia(int depth)
+</code></pre>
+
+<p>Applies a sepia filter to the image, with more or less depth</p>
+
+<p><img src="http://dansd.com/gitimages/c1.png"></p>
+
+<pre><code>trainspotting()
+</code></pre>
+
+<p>Makes everything a bit more orange</p>
+
+<p><img src="http://dansd.com/gitimages/c2.png"></p>
+
+<pre><code>ocean()
+</code></pre>
+
+<p>Makes everything a bit more dark blue</p>
+      </section>
+
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
