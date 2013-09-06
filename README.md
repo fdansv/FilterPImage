@@ -24,6 +24,14 @@ Tints (kind of) the image with the specified colour
     
 Multiplies the saturation of the image by the factor.
 
+    hue(float factor)
+
+Multiplies the hue of the image by the factor.
+
+    brightness(float factor)
+
+Multiplies the brightness of the image by the factor.
+
     makeItMoreYellow() 
     
 Makes the image, indeed, more yellow.
