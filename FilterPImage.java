@@ -3,6 +3,10 @@ package com.dansd.FilterPImage;
 import processing.core.*;
 
 public class FilterPImage extends PImage {
+    private static final int HUE = 122;
+    private static final int SATURATION = 123;
+    private static final int BRIGHTNESS = 124;
+
     public FilterPImage(PApplet applet, String imgPath){
         super();
         PImage img = applet.loadImage(imgPath);
@@ -27,12 +31,36 @@ public class FilterPImage extends PImage {
     }
 
     public void saturate(float factor){
+        this.modifyHSB(SATURATION, factor);
+    }
+
+    public void hue(float factor){
+        this.modifyHSB(HUE, factor);
+    }
+
+    public void brightness(float factor){
+        this.modifyHSB(BRIGHTNESS, factor);
+    }
+
+    private void modifyHSB(int mode,  float factor) {
         this.parent.colorMode(HSB);
         this.loadPixels();
         for(int i=0; i<this.pixels.length; i++){
             int thisColor = parent.color(pixels[i]);
-
-            int newColor = parent.color(parent.hue(thisColor), parent.saturation(thisColor) * factor, parent.brightness(thisColor));
+            int newColor;
+            switch(mode){
+                case HUE:
+                    newColor = parent.color(parent.hue(thisColor) * factor, parent.saturation(thisColor) , parent.brightness(thisColor));
+                    break;
+                case SATURATION:
+                    newColor = parent.color(parent.hue(thisColor), parent.saturation(thisColor) * factor , parent.brightness(thisColor));
+                    break;
+                case BRIGHTNESS:
+                    newColor = parent.color(parent.hue(thisColor), parent.saturation(thisColor) , parent.brightness(thisColor)*factor);
+                    break;
+                default:
+                    newColor = thisColor;
+            }
             pixels[i] = newColor;
         }
         this.updatePixels();

@@ -9,7 +9,7 @@ public class FilterTests extends PApplet {
     public void setup() {
         size(800, 600);
         testImage = new FilterPImage(this,"/cat.jpg"); //Change this path to your image
-        testImage.trainspotting(); //This is how you call the effect
+        testImage.brightness(2); //This is how you call the effect
 
 
     }
