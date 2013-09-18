@@ -1,6 +1,7 @@
 package com.dansd.FilterPImage;
 
 import processing.core.*;
+import uk.co.images.coketruck.CokeCapture;
 
 public class FilterPImage extends PImage {
     private static final int HUE = 122;
@@ -159,4 +160,46 @@ public class FilterPImage extends PImage {
         this.updatePixels();
 
     }
+
+    public void setFilterByName(int filterName){
+        if(filterName == FilterPImage.THRES){
+            this.filter(THRESHOLD);
+        }
+        else if(filterName == FilterPImage.MORE_YELLOW){
+            this.makeItMoreYellow();
+        }
+        else if(filterName == FilterPImage.SMURFIFY){
+            this.smurfify();
+        }
+        else if(filterName == FilterPImage.SATURATE){
+            this.saturate(0.1f);
+        }
+        else if(filterName == FilterPImage.CONTRAST){
+            this.contrast(50);
+        }
+        else if(filterName == FilterPImage.SEPIA){
+            this.sepia(20);
+        }
+        else if(filterName == FilterPImage.INV){
+            this.filter(INVERT);
+        }
+        else if(filterName == FilterPImage.TRAINSPOTTING){
+            this.trainspotting();
+        }
+        else if(filterName == FilterPImage.OCEAN){
+            this.ocean();
+        }
+    }
+
+    private static final int THRES = 12345;
+    private static final int MORE_YELLOW = 12346;
+    private static final int SMURFIFY = 12347;
+    private static final int SATURATE = 12348;
+    private static final int CONTRAST = 12349;
+    private static final int TRAINSPOTTING = 12350;
+    private static final int SEPIA = 12351;
+    private static final int INV = 12352;
+    private static final int OCEAN = 12353;
+
+    public static final int[] filters = {THRES,MORE_YELLOW,SMURFIFY,SATURATE,CONTRAST,SEPIA,INV,TRAINSPOTTING,OCEAN};
 }
