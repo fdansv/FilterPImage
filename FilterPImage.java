@@ -79,24 +79,6 @@ public class FilterPImage extends PImage {
         this.updatePixels();
     }
 
-    // sinCity() doesn't work, right now it looks stupid.
-
-    public void sinCity(){
-        this.loadPixels();
-        for(int i=0; i<this.pixels.length; i++){
-            int thisColor = parent.color(pixels[i]);
-            if(parent.red(thisColor)>100&&parent.green(thisColor)<100&&parent.blue(thisColor)<100){
-                pixels[i] = parent.color(parent.red(thisColor), parent.green(thisColor), parent.blue(thisColor));
-            }
-            else{
-                //colorMode(HSB);
-                pixels[i] = parent.color(parent.red(thisColor) * 0.6f, parent.green(thisColor) * 0.6f, parent.blue(thisColor) * 0.6f);
-                //pixels[i] = color(hue(thisColor),saturation(thisColor)*0.8f,brightness(thisColor)*0.8f);
-                //colorMode(RGB);
-            }
-        }
-        this.updatePixels();
-    }
     public void smurfify(){
         this.loadPixels();
         for(int i=0; i<this.pixels.length; i++){
