@@ -1,7 +1,6 @@
 package com.dansd.FilterPImage;
 
 import processing.core.*;
-import uk.co.images.coketruck.CokeCapture;
 
 public class FilterPImage extends PImage {
     private static final int HUE = 122;
@@ -144,32 +143,16 @@ public class FilterPImage extends PImage {
     }
 
     public void setFilterByName(int filterName){
-        if(filterName == FilterPImage.THRES){
-            this.filter(THRESHOLD);
-        }
-        else if(filterName == FilterPImage.MORE_YELLOW){
-            this.makeItMoreYellow();
-        }
-        else if(filterName == FilterPImage.SMURFIFY){
-            this.smurfify();
-        }
-        else if(filterName == FilterPImage.SATURATE){
-            this.saturate(0.1f);
-        }
-        else if(filterName == FilterPImage.CONTRAST){
-            this.contrast(50);
-        }
-        else if(filterName == FilterPImage.SEPIA){
-            this.sepia(20);
-        }
-        else if(filterName == FilterPImage.INV){
-            this.filter(INVERT);
-        }
-        else if(filterName == FilterPImage.TRAINSPOTTING){
-            this.trainspotting();
-        }
-        else if(filterName == FilterPImage.OCEAN){
-            this.ocean();
+        switch(filterName){
+            case FilterPImage.THRES: this.filter(THRESHOLD);
+            case FilterPImage.MORE_YELLOW: this.makeItMoreYellow();
+            case FilterPImage.SMURFIFY: this.smurfify();
+            case FilterPImage.SATURATE: this.saturate(0.1f);
+            case FilterPImage.CONTRAST: this.contrast(50);
+            case FilterPImage.SEPIA: this.sepia(20);
+            case FilterPImage.INV: this.filter(INVERT);
+            case FilterPImage.TRAINSPOTTING: this.trainspotting();
+            case FilterPImage.OCEAN: this.ocean();
         }
     }
 
